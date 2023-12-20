@@ -1,0 +1,17 @@
+{
+    "name": "TypeScript",
+    "build": {
+        "dockerfile": "Dockerfile"
+    },
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "dbaeumer.vscode-eslint",
+                "ms-vscode.vscode-typescript-next",
+                "esbenp.prettier-vscode",
+                "ms-vscode.typescript-javascript-grammar"
+            ]
+        }
+    },
+    "forwardPorts": [3000],
+}
