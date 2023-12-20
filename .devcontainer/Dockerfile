@@ -9,6 +9,7 @@ RUN apt-get update && apt-get install -y \
     axel \
     git \
     zsh \
+    htop \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/*
 

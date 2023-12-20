@@ -1,13 +1,20 @@
 {
   "devDependencies": {
     "@types/jest": "^29.5.11",
+    "@typescript-eslint/eslint-plugin": "^6.15.0",
+    "@typescript-eslint/parser": "^6.15.0",
+    "eslint": "^8.56.0",
     "jest": "^29.7.0",
     "ts-jest": "^29.1.1",
     "typescript": "^5.3.3"
   },
   "scripts": {
-    "test": "jest",
-    "test-c": "jest --coverage"
+    "lint": "eslint --ext .ts src",
+    "fix": "eslint --fix --ext .ts src",
+    "test": "npx jest --detectOpenHandles",
+    "test-c": "npx jest --coverage --detectOpenHandles",
+    "test-w": "npx jest --watch --detectOpenHandles",
+    "test-wc": "npx jest --watch --coverage --detectOpenHandles"
   },
   "license": "MIT",
   "author": {

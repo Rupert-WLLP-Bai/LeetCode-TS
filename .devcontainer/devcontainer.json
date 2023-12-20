@@ -9,7 +9,10 @@
                 "dbaeumer.vscode-eslint",
                 "ms-vscode.vscode-typescript-next",
                 "esbenp.prettier-vscode",
-                "ms-vscode.typescript-javascript-grammar"
+                "ms-vscode.typescript-javascript-grammar",
+                "pmneo.tsimporter",
+                "ms-azuretools.vscode-docker",
+                "yzhang.markdown-all-in-one"
             ]
         }
     },
