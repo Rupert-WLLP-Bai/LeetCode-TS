@@ -1,4 +1,4 @@
-import { lengthOfLongestSubstring } from '../src/p_0003';
+import { lengthOfLongestSubstring } from '../src/p_0003'
 
 
 const testCases = [
@@ -34,9 +34,9 @@ const testCases = [
     },
 ]
 
-describe('p_0003', () => {
+describe('LeetCode: 3. 无重复字符的最长子串', () => {
     testCases.forEach(({ input, answer }) => {
-        test(`case: ${JSON.stringify(input)}`, () => {
+        test(`测试用例 ${JSON.stringify(input)}`, () => {
             expect(lengthOfLongestSubstring(input.s)).toEqual(answer)
         })
     })

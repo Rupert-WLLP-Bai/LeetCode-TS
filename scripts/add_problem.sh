@@ -1,11 +1,14 @@
 #!/bin/bash
 
+# Get the directory where the script is located
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+
 # Read problem number from user input
 problem_number=$1
 
-# Generate file paths
-src_file="../src/p_$(printf "%04d" $problem_number).ts"
-test_file="../tests/p_$(printf "%04d" $problem_number).test.ts"
+# Generate file paths relative to the script location
+src_file="$SCRIPT_DIR/../src/p_$(printf "%04d" $problem_number).ts"
+test_file="$SCRIPT_DIR/../tests/p_$(printf "%04d" $problem_number).test.ts"
 
 # Create src file with basic content
 cat << EOF > $src_file
@@ -19,14 +22,11 @@ EOF
 
 # Create test file with basic content
 cat << EOF > $test_file
-import solveProblem from '../src/p_$(printf "%04d" $problem_number)';
 
-// Test function
-function testProblem() {
-    // TODO: Write your test cases here
-}
+const testCases = [
+    
+]
 
-testProblem();
 EOF
 
 echo "Files generated successfully!"

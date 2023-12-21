@@ -9,9 +9,10 @@
     "typescript": "^5.3.3"
   },
   "scripts": {
-    "lint": "eslint --ext .ts src",
-    "fix": "eslint --fix --ext .ts src",
+    "lint": "eslint --ext .ts .",
+    "fix": "eslint --fix --ext .ts .",
     "test": "npx jest --detectOpenHandles",
+    "test-v": "npx jest --verbose --detectOpenHandles",
     "test-c": "npx jest --coverage --detectOpenHandles",
     "test-w": "npx jest --watch --detectOpenHandles",
     "test-wc": "npx jest --watch --coverage --detectOpenHandles"

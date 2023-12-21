@@ -1,4 +1,4 @@
-import { longestPalindrome } from '../src/p_0005';
+import { longestPalindrome } from '../src/p_0005'
 
 const testCases = [
     {
@@ -28,11 +28,11 @@ const testCases = [
     }
 ]
 
-describe('p_0005', () => {
+describe('LeetCode: 5. 最长回文子串', () => {
     testCases.map(t => {
-        it(`test case: ${t.input}`, () => {
-            const result = longestPalindrome(t.input);
-            expect(t.answer).toContain(result);
-        });
-    });
+        it(`测试用例 ${t.input}`, () => {
+            const result = longestPalindrome(t.input)
+            expect(t.answer).toContain(result)
+        })
+    })
 })

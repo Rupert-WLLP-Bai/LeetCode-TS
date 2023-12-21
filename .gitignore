@@ -131,5 +131,4 @@ dist
 
 # pnpm
 .pnpm
-pnpm-lock.yaml
 .pnpm-store/

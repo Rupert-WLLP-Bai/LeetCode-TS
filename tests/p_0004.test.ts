@@ -1,4 +1,4 @@
-import { findMedianSortedArrays } from '../src/p_0004';
+import { findMedianSortedArrays } from '../src/p_0004'
 
 const testCases = [
     {
@@ -38,9 +38,9 @@ const testCases = [
     },
 ]
 
-describe('p_0004', () => {
+describe('LeetCode: 4. 寻找两个正序数组的中位数', () => {
     testCases.forEach(({ input, answer }) => {
-        test(`case: ${JSON.stringify(input)}`, () => {
+        test(`测试用例 ${JSON.stringify(input)}`, () => {
             expect(findMedianSortedArrays(input.nums1, input.nums2)).toEqual(answer)
         })
     })
