@@ -7,6 +7,8 @@
   - [0006-Z 字形变换](#0006-z-字形变换)
   - [0007-整数反转](#0007-整数反转)
   - [0008-字符串转换整数 (atoi)](#0008-字符串转换整数-atoi)
+  - [0009-回文数](#0009-回文数)
+  - [0010-正则表达式匹配](#0010-正则表达式匹配)
 
 # LeetCode-TS
 
@@ -30,59 +32,7 @@ LeetCode implemented by TypeScript
 
 思路：将两个数组分别分成两部分，左边部分的长度为 k，右边部分的长度为 m+n-k，如果左边部分的最大值小于等于右边部分的最小值，则左边部分的最大值就是中位数，否则 k 需要减小，m+n-k 需要增大，然后继续二分查找。
 
-关键: findKth 函数的实现, 该函数的作用是找到两个数组中第 k 小的数字。
-
-```typescript
-function getKth(
-  nums1: number[],
-  start1: number,
-  end1: number,
-  nums2: number[],
-  start2: number,
-  end2: number,
-  k: number
-): number {
-  const len1 = end1 - start1 + 1;
-  const len2 = end2 - start2 + 1;
-  // 让len1的长度小于len2，这样就能保证如果有数组空了，一定是len1
-  if (len1 > len2) {
-    // 交换两个数组，保证len1始终小于len2
-    return getKth(nums2, start2, end2, nums1, start1, end1, k);
-  }
-  if (len1 === 0) {
-    // 如果len1为空，则直接返回nums2的第k个元素
-    return nums2[start2 + k - 1];
-  }
-  if (k === 1) {
-    // 如果k为1，则直接返回两个数组的起始元素中较小的一个
-    return Math.min(nums1[start1], nums2[start2]);
-  }
-  // 防止数组越界
-  const i = start1 + Math.min(len1, Math.floor(k / 2)) - 1;
-  const j = start2 + Math.min(len2, Math.floor(k / 2)) - 1;
-  if (nums1[i] > nums2[j]) {
-    return getKth(
-      nums1,
-      start1,
-      end1,
-      nums2,
-      j + 1,
-      end2,
-      k - (j - start2 + 1)
-    );
-  } else {
-    return getKth(
-      nums1,
-      i + 1,
-      end1,
-      nums2,
-      start2,
-      end2,
-      k - (i - start1 + 1)
-    );
-  }
-}
-```
+关键: findKth 函数的实现, 该函数的作用是找到两个数组中第 k 小的数字。 参考: [p_0004](./src/p_0004.ts)
 
 ## 0005-最长回文子串
 
@@ -102,3 +52,61 @@ function getKth(
 ## 0008-字符串转换整数 (atoi)
 
 思路: 遍历, 使用状态机
+
+## 0009-回文数
+
+思路: 转换为字符串, 然后判断是否为回文串
+
+## 0010-正则表达式匹配
+
+**难点: 动态规划**
+
+思路: 动态规划, $dp[i][j]$ 表示 $s$ 的前 $i$ 个字符与 $p$ 的前 $j$ 个字符是否匹配
+
+对于一个给定的字符串 $s$ 和模式 $p$， 令 $ dp[i][j] $ 表示字符串 $s$ 的前 $i$ 个字符与模式 $p$ 的前 $j$ 个字符是否匹配。因此，$ dp[0][0] = true $，因为两个空字符串是匹配的。
+
+状态转移方程可以分为以下几种情况：
+
+1. **当模式中的当前字符不是 $*$ 时**:
+
+   - 如果当前字符直接相等，或者模式中的当前字符是 $.$ （可以匹配任意单个字符），则：
+
+     $$
+
+       dp[i][j] = dp[i - 1][j - 1]
+
+
+     $$
+
+2. **当模式中的当前字符是 $*$ 时**:
+
+   - 我们要考虑 $*$ 的作用。$*$ 可以让前面的字符出现任意次（包括 0 次）：
+
+     a. **若 $*$ 表示前面字符出现 $0$ 次** (即模式 $p$ 中的这个 $*$ 和它前面的字符都被忽略)，则：
+
+     $$
+            dp[i][j] = dp[i][j - 2]
+     $$
+
+     b. **若 $*$ 表示前面字符出现至少 $1$ 次**，我们需要检查字符串 $s$ 当前字符是否与模式中 $*$ 的前一个字符匹配（例如 $p[j-1]$ 是 $*$，则 $p[j-2]$ 是它之前的字符），有两种可能性：
+
+     - 前一个字符与 $s$ 当前字符匹配：
+
+       $$
+         dp[i][j] = dp[i - 1][j] \quad \text{if} \quad s[i - 1] = p[j - 2] \quad \text{or} \quad p[j - 2] = '.'
+       $$
+
+     - 不匹配，则 $*$ 表示前面字符出现 $0$ 次，退回到情况 a
+
+最终的状态转移方程综合上述情况可简化为：
+
+$$
+  dp[i][j] =
+  \begin{cases}
+  dp[i - 1][j - 1], & \text{if } p[j - 1] \neq '*' \text{ and } (s[i - 1] = p[j - 1] \text{ or } p[j - 1] = '.') \\
+  dp[i][j - 2], & \text{if } p[j - 1] = '*' \text{ and } \text{the pattern repeats 0 times} \\
+  dp[i - 1][j] \text{ and } (s[i - 1] = p[j - 2] \text{ or } p[j - 2] = '.'), & \text{if } p[j - 1] = '*' \text{ and the pattern repeats at least once} \\
+  \end{cases}
+$$
+
+这个方程涵盖了所有的匹配情况，并且能够递归地确定整个字符串和模式是否匹配。

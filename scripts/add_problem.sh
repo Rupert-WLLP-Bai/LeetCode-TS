@@ -24,7 +24,10 @@ EOF
 cat << EOF > $test_file
 
 const testCases = [
-    
+    {
+        input: {},
+        answer: {}
+    }
 ]
 
 EOF
