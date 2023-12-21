@@ -17,4 +17,5 @@
         }
     },
     "forwardPorts": [3000],
+    "postAttachCommand": "pnpm install"
 }
