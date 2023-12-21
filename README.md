@@ -4,7 +4,9 @@
   - [0003-无重复字符的最长子串](#0003-无重复字符的最长子串)
   - [0004-寻找两个有序数组的中位数](#0004-寻找两个有序数组的中位数)
   - [0005-最长回文子串](#0005-最长回文子串)
-
+  - [0006-Z 字形变换](#0006-z-字形变换)
+  - [0007-整数反转](#0007-整数反转)
+  - [0008-字符串转换整数 (atoi)](#0008-字符串转换整数-atoi)
 
 # LeetCode-TS
 
@@ -31,30 +33,54 @@ LeetCode implemented by TypeScript
 关键: findKth 函数的实现, 该函数的作用是找到两个数组中第 k 小的数字。
 
 ```typescript
-function getKth(nums1: number[], start1: number, end1: number, nums2: number[], start2: number, end2: number, k: number): number {
-    const len1 = end1 - start1 + 1;
-    const len2 = end2 - start2 + 1;
-    // 让len1的长度小于len2，这样就能保证如果有数组空了，一定是len1
-    if (len1 > len2) {
-        // 交换两个数组，保证len1始终小于len2
-        return getKth(nums2, start2, end2, nums1, start1, end1, k);
-    }
-    if (len1 === 0) {
-        // 如果len1为空，则直接返回nums2的第k个元素
-        return nums2[start2 + k - 1];
-    }
-    if (k === 1) {
-        // 如果k为1，则直接返回两个数组的起始元素中较小的一个
-        return Math.min(nums1[start1], nums2[start2]);
-    }
-    // 防止数组越界
-    const i = start1 + Math.min(len1, Math.floor(k / 2)) - 1;
-    const j = start2 + Math.min(len2, Math.floor(k / 2)) - 1;
-    if (nums1[i] > nums2[j]) {
-        return getKth(nums1, start1, end1, nums2, j + 1, end2, k - (j - start2 + 1));
-    } else {
-        return getKth(nums1, i + 1, end1, nums2, start2, end2, k - (i - start1 + 1));
-    }
+function getKth(
+  nums1: number[],
+  start1: number,
+  end1: number,
+  nums2: number[],
+  start2: number,
+  end2: number,
+  k: number
+): number {
+  const len1 = end1 - start1 + 1;
+  const len2 = end2 - start2 + 1;
+  // 让len1的长度小于len2，这样就能保证如果有数组空了，一定是len1
+  if (len1 > len2) {
+    // 交换两个数组，保证len1始终小于len2
+    return getKth(nums2, start2, end2, nums1, start1, end1, k);
+  }
+  if (len1 === 0) {
+    // 如果len1为空，则直接返回nums2的第k个元素
+    return nums2[start2 + k - 1];
+  }
+  if (k === 1) {
+    // 如果k为1，则直接返回两个数组的起始元素中较小的一个
+    return Math.min(nums1[start1], nums2[start2]);
+  }
+  // 防止数组越界
+  const i = start1 + Math.min(len1, Math.floor(k / 2)) - 1;
+  const j = start2 + Math.min(len2, Math.floor(k / 2)) - 1;
+  if (nums1[i] > nums2[j]) {
+    return getKth(
+      nums1,
+      start1,
+      end1,
+      nums2,
+      j + 1,
+      end2,
+      k - (j - start2 + 1)
+    );
+  } else {
+    return getKth(
+      nums1,
+      i + 1,
+      end1,
+      nums2,
+      start2,
+      end2,
+      k - (i - start1 + 1)
+    );
+  }
 }
 ```
 
