@@ -1,21 +1,21 @@
 {
-    "name": "TypeScript",
-    "build": {
-        "dockerfile": "Dockerfile"
-    },
-    "customizations": {
-        "vscode": {
-            "extensions": [
-                "dbaeumer.vscode-eslint",
-                "ms-vscode.vscode-typescript-next",
-                "esbenp.prettier-vscode",
-                "ms-vscode.typescript-javascript-grammar",
-                "pmneo.tsimporter",
-                "ms-azuretools.vscode-docker",
-                "yzhang.markdown-all-in-one"
-            ]
-        }
-    },
-    "forwardPorts": [3000],
-    "postAttachCommand": "pnpm install"
+  "name": "TypeScript",
+  "build": {
+    "dockerfile": "Dockerfile"
+  },
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "dbaeumer.vscode-eslint",
+        "ms-vscode.vscode-typescript-next",
+        "esbenp.prettier-vscode",
+        "ms-vscode.typescript-javascript-grammar",
+        "pmneo.tsimporter",
+        "ms-azuretools.vscode-docker",
+        "yzhang.markdown-all-in-one"
+      ]
+    }
+  },
+  "forwardPorts": [3000],
+  "postAttachCommand": "pnpm install"
 }
