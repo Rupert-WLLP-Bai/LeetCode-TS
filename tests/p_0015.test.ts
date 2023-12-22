@@ -15,6 +15,10 @@ const testCases = [
     {
         input: [0, 0, 0],
         answer: [[0, 0, 0]]
+    },
+    {
+        input: [-2, 0, 0, 2, 2],
+        answer: [[-2, 0, 2]]
     }
 ]
 

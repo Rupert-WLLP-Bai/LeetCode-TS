@@ -29,7 +29,12 @@ export function threeSum(nums: number[]): number[][] {
             result.push([nums[i], ...item]) // ...item 表示将数组展开, 相当于 item[0], item[1]
         }
     }
-    return result
+    // 对result进行去重
+    const map = new Map()
+    for (const item of result) {
+        map.set(item.toString(), item)
+    }
+    return [...map.values()]
 }
 
 /**
