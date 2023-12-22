@@ -12,9 +12,8 @@ parserOptions:
 plugins:
     - '@typescript-eslint'
 rules:
-    semi: [error, never]
+    'semi': [error, never]
     '@typescript-eslint/semi': [error, never]
-
-    # 改为需要分号
-    # semi: [error, always]
-    # "@typescript-eslint/semi": [error, always]
+    'quotes': [error, single]
+    '@typescript-eslint/quotes': [error, single]
+    'prefer-const': error
