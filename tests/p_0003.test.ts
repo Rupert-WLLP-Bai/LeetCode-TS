@@ -1,42 +1,42 @@
-import { lengthOfLongestSubstring } from "../src/p_0003";
+import { lengthOfLongestSubstring } from '../src/p_0003'
 
 const testCases = [
-  {
-    input: {
-      s: "abcabcbb",
+    {
+        input: {
+            s: 'abcabcbb'
+        },
+        answer: 3
     },
-    answer: 3,
-  },
-  {
-    input: {
-      s: "bbbbb",
+    {
+        input: {
+            s: 'bbbbb'
+        },
+        answer: 1
     },
-    answer: 1,
-  },
-  {
-    input: {
-      s: "pwwkew",
+    {
+        input: {
+            s: 'pwwkew'
+        },
+        answer: 3
     },
-    answer: 3,
-  },
-  {
-    input: {
-      s: "",
+    {
+        input: {
+            s: ''
+        },
+        answer: 0
     },
-    answer: 0,
-  },
-  {
-    input: {
-      s: "dvdf",
-    },
-    answer: 3,
-  },
-];
+    {
+        input: {
+            s: 'dvdf'
+        },
+        answer: 3
+    }
+]
 
-describe("LeetCode: 3. 无重复字符的最长子串", () => {
-  testCases.forEach(({ input, answer }) => {
-    test(`测试用例 ${JSON.stringify(input)}`, () => {
-      expect(lengthOfLongestSubstring(input.s)).toEqual(answer);
-    });
-  });
-});
+describe('LeetCode: 3. 无重复字符的最长子串', () => {
+    testCases.forEach(({ input, answer }) => {
+        test(`测试用例 ${JSON.stringify(input)}`, () => {
+            expect(lengthOfLongestSubstring(input.s)).toEqual(answer)
+        })
+    })
+})
