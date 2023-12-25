@@ -12,8 +12,8 @@ parserOptions:
 plugins:
     - '@typescript-eslint'
 rules:
-    'semi': [error, never]
-    '@typescript-eslint/semi': [error, never]
-    'quotes': [error, single]
-    '@typescript-eslint/quotes': [error, single]
-    'prefer-const': error
+    'semi': [warn, never]
+    '@typescript-eslint/semi': [warn, never]
+    'quotes': [warn, single]
+    '@typescript-eslint/quotes': [warn, single]
+    'prefer-const': warn
