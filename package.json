@@ -16,10 +16,10 @@
         "fix": "prettier --write .",
         "lf": "eslint --fix --ext .ts . && prettier --write .",
         "test": "npx jest --detectOpenHandles",
-        "test-v": "npx jest --verbose --detectOpenHandles",
-        "test-c": "npx jest --coverage --detectOpenHandles",
-        "test-w": "npx jest --watch --detectOpenHandles",
-        "test-wc": "npx jest --watch --coverage --detectOpenHandles"
+        "test-v": "npx jest --verbose --detectOpenHandles --config jest.config.js",
+        "test-c": "npx jest --verbose --coverage --detectOpenHandles --config jest.config.js",
+        "test-w": "npx jest --verbose --watch --detectOpenHandles --config jest.config.js",
+        "test-wc": "npx jest --verbose --watch --coverage --detectOpenHandles --config jest.config.js"
     },
     "license": "MIT",
     "author": {

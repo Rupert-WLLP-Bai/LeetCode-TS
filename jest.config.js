@@ -8,4 +8,5 @@ module.exports = {
     },
     testMatch: ['**/tests/**/*.test.ts'],
     moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx', 'json', 'node']
+    // maxWorkers: 1,
 }

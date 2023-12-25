@@ -12,12 +12,14 @@
                 "ms-vscode.typescript-javascript-grammar",
                 "pmneo.tsimporter",
                 "ms-azuretools.vscode-docker",
-                "yzhang.markdown-all-in-one"
+                "yzhang.markdown-all-in-one",
+                "ms-vscode-remote.vscode-remote-extensionpack"
             ]
         }
     },
-    "forwardPorts": [
-        3000
-    ],
-    "postAttachCommand": "pnpm install"
+    "forwardPorts": [3000],
+    "postAttachCommand": "pnpm install",
+    "mounts": [
+        "source=${localEnv:HOME}${localEnv:USERPROFILE}/.ssh,target=/root/.ssh,type=bind,consistency=cached"
+    ]
 }

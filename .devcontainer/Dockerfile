@@ -24,6 +24,12 @@ RUN git clone https://mirrors.tuna.tsinghua.edu.cn/git/ohmyzsh.git &&\
 # Set up the default shell to Zsh
 RUN chsh -s /usr/bin/zsh
 
+# mount ssh key
+RUN mkdir -p /root/.ssh && \
+    ssh-keyscan github.com >> /root/.ssh/known_hosts && \
+    chmod 700 /root/.ssh && \
+    chmod 600 /root/.ssh/*
+
 # 安装 Node.js 和 NPM
 RUN curl -fsSL https://deb.nodesource.com/setup_current.x | bash - && \
     apt-get install -y nodejs
