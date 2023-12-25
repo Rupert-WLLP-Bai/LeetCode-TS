@@ -27,7 +27,7 @@ const testCases = [
     }
 ]
 
-describe('LeetCode: 13 罗马数字转整数', () => {
+describe('LeetCode 13: 罗马数字转整数', () => {
     testCases.map((t) => {
         it(`测试用例: ${t.input}`, () => {
             expect(romanToInt(t.input)).toEqual(t.answer)

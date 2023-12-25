@@ -27,7 +27,7 @@ const testCases = [
     }
 ]
 
-describe('LeetCode: 7. 整数反转', () => {
+describe('LeetCode 7:. 整数反转', () => {
     testCases.map((t) => {
         it(`测试用例 [${t.input}]`, () => {
             expect(reverse(t.input)).toEqual(t.answer)

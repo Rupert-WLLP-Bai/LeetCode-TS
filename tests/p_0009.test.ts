@@ -11,7 +11,7 @@ const testCases = [
     { input: 111, answer: true }
 ]
 
-describe('LeetCode: 9 回文数', () => {
+describe('LeetCode 9: 回文数', () => {
     testCases.map((t) => {
         it(`测试用例 ${t.input}`, () => {
             expect(isPalindrome(t.input)).toEqual(t.answer)

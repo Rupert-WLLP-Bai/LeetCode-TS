@@ -34,7 +34,7 @@ const testCases = [
     }
 ]
 
-describe('LeetCode: 2. 两数相加', () => {
+describe('LeetCode 2: 两数相加', () => {
     testCases.forEach(({ input, answer }) => {
         test(`测试用例 ${JSON.stringify(input)}`, () => {
             expect(addTwoNumbers(input.l1, input.l2)).toEqual(answer)

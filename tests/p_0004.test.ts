@@ -38,7 +38,7 @@ const testCases = [
     }
 ]
 
-describe('LeetCode: 4. 寻找两个正序数组的中位数', () => {
+describe('LeetCode 4: 寻找两个正序数组的中位数', () => {
     testCases.forEach(({ input, answer }) => {
         test(`测试用例 ${JSON.stringify(input)}`, () => {
             expect(findMedianSortedArrays(input.nums1, input.nums2)).toEqual(

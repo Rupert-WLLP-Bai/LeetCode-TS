@@ -23,7 +23,7 @@ const testCases = [
     }
 ]
 
-describe('LeetCode: 14 最长公共前缀', () => {
+describe('LeetCode 14: 最长公共前缀', () => {
     testCases.map((t) => {
         it(`测试用例 [${t.input}]`, () => {
             expect(longestCommonPrefix(t.input)).toEqual(t.answer)

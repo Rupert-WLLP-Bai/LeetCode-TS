@@ -24,7 +24,7 @@ const testCases = [
     }
 ]
 
-describe('p_0146', () => {
+describe('LeeCode 146: LRU缓存', () => {
     testCases.forEach((testCase, index) => {
         it(`测试用例${index + 1}`, () => {
             const cache = new LRUCache(testCase.input2[0][0])

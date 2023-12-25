@@ -10,7 +10,7 @@ const testCases = [
     { input: '2147483648', answer: 2147483647 }
 ]
 
-describe('LeetCode: 8. 字符串转换整数 (atoi)', () => {
+describe('LeetCode 8:. 字符串转换整数 (atoi)', () => {
     testCases.map((t) => {
         it(`测试用例 ${t.input}`, () => {
             expect(myAtoi(t.input)).toEqual(t.answer)

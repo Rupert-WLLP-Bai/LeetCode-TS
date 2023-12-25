@@ -6,7 +6,7 @@ const testCases = [
     { nums: [3, 3], target: 6, expected: [0, 1] }
 ]
 
-describe('LeetCode: 1. 两数之和', () => {
+describe('LeetCode 1: 两数之和', () => {
     testCases.forEach(({ nums, target, expected }) => {
         test(`测试用例 ${nums} ${target}`, () => {
             expect(twoSum(nums, target)).toEqual(expected)

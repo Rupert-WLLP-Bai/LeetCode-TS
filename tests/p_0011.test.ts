@@ -23,7 +23,7 @@ const testCases = [
     }
 ]
 
-describe('LeetCode: 11 盛最多水的容器', () => {
+describe('LeetCode 11: 盛最多水的容器', () => {
     testCases.forEach((testCase) => {
         it(`测试用例 [${testCase.input}]`, () => {
             expect(maxArea(testCase.input)).toEqual(testCase.answer)

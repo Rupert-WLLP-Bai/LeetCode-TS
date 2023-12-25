@@ -31,7 +31,7 @@ const testCases = [
     }
 ]
 
-describe('LeetCode: 12 整数转罗马数字', () => {
+describe('LeetCode 12: 整数转罗马数字', () => {
     testCases.forEach((testCase) => {
         it(`测试用例 [${testCase.input}]`, () => {
             expect(intToRoman(testCase.input)).toEqual(testCase.answer)

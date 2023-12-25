@@ -11,7 +11,7 @@ const testCases = [
     { input: { s: 'aaa', p: 'ab*a*c*a' }, answer: true }
 ]
 
-describe('LeetCode: 10 正则表达式匹配', () => {
+describe('LeetCode 10: 正则表达式匹配', () => {
     testCases.map((t) => {
         it(`测试用例 ${JSON.stringify(t.input)}`, () => {
             expect(isMatch(t.input.s, t.input.p)).toEqual(t.answer)

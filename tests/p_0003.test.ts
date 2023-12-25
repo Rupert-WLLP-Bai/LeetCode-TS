@@ -33,7 +33,7 @@ const testCases = [
     }
 ]
 
-describe('LeetCode: 3. 无重复字符的最长子串', () => {
+describe('LeetCode 3: 无重复字符的最长子串', () => {
     testCases.forEach(({ input, answer }) => {
         test(`测试用例 ${JSON.stringify(input)}`, () => {
             expect(lengthOfLongestSubstring(input.s)).toEqual(answer)

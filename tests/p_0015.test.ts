@@ -22,7 +22,7 @@ const testCases = [
     }
 ]
 
-describe('LeetCode: 15 三数之和', () => {
+describe('LeetCode 15: 三数之和', () => {
     testCases.map((t) => {
         it(`测试用例 [${t.input}]`, () => {
             // 只需要判断数组中的元素是否相同，不需要考虑顺序
